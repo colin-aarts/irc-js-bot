@@ -1,0 +1,29 @@
+{
+	"name": "irc-js-bot",
+	"version": "0.1.0",
+	"description": "A simple IRC bot implemented on top of IRC-js, with support for plug-ins.",
+	"keywords": ["irc", "bot", "irc bot"],
+	"private": true,
+	"preferGlobal": false,
+	"author": {
+		"name": "Colin Aarts",
+		"email": "colin@colinaarts.com",
+		"url": "http://colinaarts.com"
+	},
+	"main": "./lib/",
+	"dependencies": {
+		"irc-js": ">=0.2.27",
+		"xml2js": "*",
+		"coloured-log": "*"
+	},
+	"bundledDependencies": [
+		"goo.gl",
+		"irc-js-bot-admin",
+		"irc-js-bot-currency_conversion",
+		"irc-js-bot-google",
+		"irc-js-bot-short",
+		"irc-js-bot-util",
+		"irc-js-bot-w3c",
+		"js-extensions"
+	]
+}
