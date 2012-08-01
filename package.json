@@ -9,6 +9,10 @@
 		"email": "colin@colinaarts.com",
 		"url": "http://colinaarts.com"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/colin-aarts/irc-js-bot.git"
+	},
 	"main": "./lib/",
 	"dependencies": {
 		"irc-js": ">=0.2.27",
