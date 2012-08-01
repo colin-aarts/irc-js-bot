@@ -244,7 +244,14 @@ bot =
 
 	handle_command: (event, input_data, output_data) ->
 
-		@special_commands[input_data.command].fn event, input_data, output_data
+		command = @special_commands[input_data.command]
+
+		if (not command.admin_only) or
+		   (command.admin_only and output_data.is_admin)
+ 			command.fn event, input_data, output_data
+ 		else
+ 			message = '''Sorry, you have to be an admin to use this command'''
+ 			@send 'notice', event.person.nick, message
 
 
 
