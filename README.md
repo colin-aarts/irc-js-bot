@@ -6,6 +6,10 @@ A simple IRC bot implemented on top of [IRC-js](https://github.com/gf3/IRC-js), 
 
 	npm install irc-js-bot
 
+## In the wild
+
+The main support bot in the [#css](irc://irc.freenode.net/css) and [#html](irc://irc.freenode.net/html) channels on [Freenode IRC](http://freenode.net) uses irc-js-bot. He listens to the name 'rivvles'.
+
 ## Running a bot
 
 See the [examples](/colin-aarts/irc-js-bot/tree/master/examples).
