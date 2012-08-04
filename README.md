@@ -8,7 +8,7 @@ A simple IRC bot implemented on top of [IRC-js](https://github.com/gf3/IRC-js), 
 
 ## In the wild
 
-The main support bot in the [#css](irc://irc.freenode.net/css) and [#html](irc://irc.freenode.net/html) channels on [Freenode IRC](http://freenode.net) uses irc-js-bot. He listens to the name 'rivvles'. Rivvles has a channel on Freenode which can also be used to discuss **irc-js-bot**.
+The main support bot in the [#css](irc://irc.freenode.net/css) and [#html](irc://irc.freenode.net/html) channels on [Freenode IRC](http://freenode.net) uses **irc-js-bot**. He listens to the name **rivvles** and his triggers are **`** and **]**. He also has his own channel, [#rivvles](irc://irc.freenode.net/rivvles), which can be used to discuss **irc-js-bot** as well.
 
 ## Running a bot
 
@@ -30,7 +30,7 @@ See the [examples](/colin-aarts/irc-js-bot/tree/master/examples). Better docs la
 	!foo > johndoe
 	!foo % johndoe
 
-`@` addresses `johndoe` in the channel or query of origin; `>` sends `johndoe` the message by query; `%` sends `johndoe` the message by notice.
+`@` addresses `johndoe` in the channel or query of origin; `>` sends the message by query; `%` sends the message by notice.
 
 ### Comments
 
@@ -49,7 +49,7 @@ You can also register an incoming message callback by calling `this.register_mes
 
 ### Official (bundled) plug-ins
 
-irc-js-bot comes bundled with several official plug-ins for your convenience. For now, please see the [source files](/colin-aarts/irc-js-bot/tree/master/node_modules) for details. Their names start with 'irc-js-bot-'. Each command supports the '?' flag for viewing detailed instructions.
+**irc-js-bot** comes bundled with several official plug-ins for your convenience. For now, please see the [source files](/colin-aarts/irc-js-bot/tree/master/node_modules) for details. Their names start with 'irc-js-bot-'. Each command supports the **?** flag for viewing detailed instructions.
 
 ## License
 
