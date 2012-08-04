@@ -8,7 +8,7 @@ A simple IRC bot implemented on top of [IRC-js](https://github.com/gf3/IRC-js), 
 
 ## In the wild
 
-The main support bot in the [#css](irc://irc.freenode.net/css) and [#html](irc://irc.freenode.net/html) channels on [Freenode IRC](http://freenode.net) uses irc-js-bot. He listens to the name 'rivvles'.
+The main support bot in the [#css](irc://irc.freenode.net/css) and [#html](irc://irc.freenode.net/html) channels on [Freenode IRC](http://freenode.net) uses irc-js-bot. He listens to the name 'rivvles'. Rivvles has a channel on Freenode which can also be used to discuss **irc-js-bot**.
 
 ## Running a bot
 
@@ -18,11 +18,26 @@ See the [examples](/colin-aarts/irc-js-bot/tree/master/examples).
 
 See the [examples](/colin-aarts/irc-js-bot/tree/master/examples). Better docs later. Maybe.
 
-## Plug-ins
+## Features
 
 ### Command syntax
 
-The IRC syntax for a (special) command is `<trigger><command-name>[/<flags>][ <arguments>]`, e.g. `!search/n foo`.
+`<trigger><command-name>[/<flags>][ <arguments>]`, e.g. `!search/n foo bar baz`.
+
+### Intents
+
+	!foo @ johndoe
+	!foo > johndoe
+	!foo % johndoe
+
+`@` addresses `johndoe` in the channel or query of origin; `>` sends `johndoe` the message by query; `%` sends `johndoe` the message by notice.
+
+### Comments
+
+	!foo # this is just a comment
+	!foo @ johndoe # this is just a comment
+
+## Plug-ins
 
 ### API
 
