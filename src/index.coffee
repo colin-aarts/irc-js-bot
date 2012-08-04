@@ -81,7 +81,20 @@ bot =
 				@backlog[event.recipient].pop() if @backlog[event.recipient].length > 100
 
 			# See if we have a match for the bot
-			input_match = event.message.match new RegExp "^(#{@re_triggers})(.+?)((\\s+([@>%])\\s+)(.*?))?((?:\\s+#\\s*)(.*))?$", 'i'
+			input_match = event.message.match ///
+				^
+				(#{@re_triggers})		# Bot triggers
+				(.+?)					# Command or factoid name
+				(						# Start intent group (optional)
+					(\\s+([@>%])\\s+)	# 	@ > %
+					(.*?)				# 	Target (nickname)
+				)?
+				(						# Start comment group (optional)
+					(?:\\s+\#\\s*)		# 	Hashmark (#)
+					(.*)				# 	Comment
+				)?
+				$
+				///i
 			return if not input_match
 
 			# Arrange the data
@@ -97,7 +110,14 @@ bot =
 
 			# Special command?
 			do =>
-				command_match = input_data.command.match /^(\S+?)(\/(\S+))?(\s+(.+))?$/
+				command_match = input_data.command.match ///
+					^
+					(\S+?)		# Command
+					(\/(\S+))?	# Flags (optional)
+					(\s+(.+))?	# Args (optional)
+					$
+					///
+
 				if command_match and command_match[1] of @special_commands
 					input_data.is_special = true
 					input_data.command = command_match[1]
