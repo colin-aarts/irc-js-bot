@@ -212,21 +212,9 @@ bot =
 			output_data.method = 'privmsg'
 
 		# See if the sender has admin priviledges
-		for admin in @bot_options.admins
+		output_data.is_admin = @user_match @bot_options.admins, { nick: event.person.nick, host: event.person.host }
 
-			# User is considered an admin if one of the following conditions is met:
-			# • nick matches registered nick, and no host is registered (null), -or-
-			# • host matches registered host, and no nick is registered (null), -or-
-			# • both match.
-			# This means that if both nick and host are registered, both *must* match.
-			# Note: registered host is compared to the end of the host string as sent by the server (i.e. /<host>$/).
-			is_host_match = if admin.host isnt null then (new RegExp "#{js.re_escape admin.host}$", 'i').test event.person.host else false
-
-			if (admin.nick and admin.nick is event.person.nick and not admin.host) or
-			   (admin.host and is_host_match and not admin.nick) or
-			   (admin.host and is_host_match and admin.nick and admin.nick is event.person.nick)
-				output_data.is_admin = true
-
+		#
 		return output_data
 
 
@@ -290,6 +278,27 @@ bot =
 			return aliases
 		else
 			return null
+
+
+	user_match: (user_list, target_user) ->
+
+		is_match = false
+
+		for iterated_user in user_list
+			# User is considered a match if one of the following conditions is met:
+			# • nick matches registered nick, and no host is registered (null), -or-
+			# • host matches registered host, and no nick is registered (null), -or-
+			# • both match.
+			# This means that if both nick and host are registered, both *must* match.
+			# Note: registered host is compared to the end of the host string as sent by the server (i.e. /<host>$/).
+			is_host_match = if iterated_user.host isnt null then (new RegExp "#{js.re_escape iterated_user.host}$", 'i').test target_user.host else false
+
+			if (iterated_user.nick and iterated_user.nick is target_user.nick and not iterated_user.host) or
+			   (iterated_user.host and is_host_match and not iterated_user.nick) or
+			   (iterated_user.host and is_host_match and iterated_user.nick and iterated_user.nick is target_user.nick)
+				is_match = true
+
+		return is_match
 
 
 
