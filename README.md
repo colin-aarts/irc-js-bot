@@ -20,6 +20,10 @@ See the [examples](/colin-aarts/irc-js-bot/tree/master/examples). Better docs la
 
 ## Features
 
+### Factoid syntax
+
+`<trigger><factoid-name>`, e.g. `!hello world`
+
 ### Command syntax
 
 `<trigger><command-name>[/<flags>][ <arguments>]`, e.g. `!search/n foo bar baz`.
