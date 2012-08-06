@@ -113,7 +113,7 @@ bot =
 				command_match = input_data.command.match ///
 					^
 					(\S+?)		# Command
-					(\/(\S+))?	# Flags (optional)
+					(/(\S+))?	# Flags (optional)
 					(\s+(.+))?	# Args (optional)
 					$
 					///
@@ -180,7 +180,7 @@ bot =
 	format_output: (message, input_data) ->
 
 		# Only handle single messages, not arrays of messages:
-		# It is assumed that arrays of messages are never sent to channels and as such no targetting is needed.
+		# It is assumed that arrays of messages are never sent to channels and as such no targeting is needed.
 		return if Array.isArray message
 
 		return "#{input_data.target}, #{message}" if input_data.target and input_data.target_method is '@'
@@ -220,9 +220,9 @@ bot =
 
 	handle_factoid: (event, input_data, output_data) ->
 
-		factoid_name = input_data.command
+		factoid_name = input_data.command.toLowerCase()
 		factoid_exists = factoid_name of @factoids
-
+		console.log factoid_name, factoid_exists
 		if factoid_exists
 			factoid_content = @factoids[factoid_name]
 
