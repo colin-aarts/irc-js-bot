@@ -1,5 +1,6 @@
 node_modules/coloured-log
 node_modules/xml2js
 node_modules/irc-js
+node_modules/irc-js-bot-caniuse
 *.sublime*
 TODO
