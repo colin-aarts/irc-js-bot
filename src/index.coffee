@@ -86,11 +86,11 @@ bot =
 				(#{@re_triggers})		# Bot triggers
 				(.+?)					# Command or factoid name
 				(						# Start intent group (optional)
-					(\\s+([@>%])\\s+)	# 	@ > %
+					(\s+([@>%])\s+)	# 	@ > %
 					(.*?)				# 	Target (nickname)
 				)?
 				(						# Start comment group (optional)
-					(?:\\s+\#\\s*)		# 	Hashmark (#)
+					(?:\s+\#\s*)		# 	Hashmark (#)
 					(.*)				# 	Comment
 				)?
 				$
@@ -222,7 +222,7 @@ bot =
 
 		factoid_name = input_data.command.toLowerCase()
 		factoid_exists = factoid_name of @factoids
-		console.log factoid_name, factoid_exists
+
 		if factoid_exists
 			factoid_content = @factoids[factoid_name]
 
