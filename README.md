@@ -55,6 +55,10 @@ You can also register an incoming message callback by calling `this.register_mes
 
 **irc-js-bot** comes bundled with several official plug-ins for your convenience. For now, please see the [source files](/colin-aarts/irc-js-bot/tree/master/node_modules) for details. Their names start with 'irc-js-bot-'. Each command supports the **?** flag for viewing detailed instructions.
 
+### Other plug-ins
+
+There's a [list of known plug-ins](https://github.com/colin-aarts/irc-js-bot/wiki/Plugins) on the wiki.
+
 ## License
 
 [UNLICENSE](/colin-aarts/irc-js-bot/blob/master/UNLICENSE) yo.
