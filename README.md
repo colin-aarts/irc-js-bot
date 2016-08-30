@@ -1,3 +1,5 @@
+:exclamation: Rewrite in LiveScript [available](//github.com/colin-aarts/irc-support-bot). This repo is obsolete.
+
 # irc-js-bot
 
 A simple IRC bot implemented on top of [IRC-js](https://github.com/gf3/IRC-js), with support for plug-ins.
